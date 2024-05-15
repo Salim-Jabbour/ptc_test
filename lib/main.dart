@@ -97,7 +97,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     SizedBox(height: 38.h),
                     CustomButton(
                       method: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../model/beverages_model.dart';
 import '../pages/empty_page.dart';
 import '../pages/explore_page.dart';
 import 'color_manager.dart';
@@ -70,5 +71,50 @@ class ConstManager {
       imageUrl: "assets/images/vegetables.png",
       text: "Frash Fruit\n& Vegetable",
     )
+  ];
+
+  static final List<BeveragesModel> products = [
+    // 1
+    BeveragesModel(
+      imageUrl: "/coke",
+      name: "Diet Coke",
+      volume: "355ml",
+      price: "\$1.99",
+    ),
+    // 2
+    BeveragesModel(
+      imageUrl: "/sprite",
+      name: "Sprite Can",
+      volume: "325ml",
+      price: "\$1.50",
+    ),
+    // 3
+    BeveragesModel(
+      imageUrl: "/grape",
+      name: "Apple & Grape Juice",
+      volume: "2L",
+      price: "\$5.99",
+    ),
+    // 4
+    BeveragesModel(
+      imageUrl: "/juice",
+      name: "Orenge Juice",
+      volume: "2L",
+      price: "\$8.99",
+    ),
+    // 5
+    BeveragesModel(
+      imageUrl: "/cola",
+      name: "Coca Cola Can",
+      volume: "325ml",
+      price: "\$4.99",
+    ),
+    // 6
+    BeveragesModel(
+      imageUrl: "/pepsi",
+      name: "Pepsi Can",
+      volume: "330ml",
+      price: "\$4.99",
+    ),
   ];
 }

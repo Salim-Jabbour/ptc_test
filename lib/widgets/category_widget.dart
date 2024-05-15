@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../model/category_model.dart';
+import '../pages/beverages_page.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({super.key, required this.categoryModel});
@@ -10,7 +11,11 @@ class CategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // TODO: navigate to beverages;
+         Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BeveragesPage()));
       },
       child: Container(
         height: 190.h,
