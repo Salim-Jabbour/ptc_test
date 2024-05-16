@@ -2,16 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ModalBottomTextWidget extends StatelessWidget {
-  const ModalBottomTextWidget(
-      {super.key, required this.text, required this.isVisible});
+  const ModalBottomTextWidget({
+    super.key,
+    required this.text,
+    required this.isVisible,
+    this.subtext,
+    this.imageUrl,
+  });
   final String text;
   final bool isVisible;
+  final String? subtext;
+  final String? imageUrl;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               text,
@@ -20,10 +29,29 @@ class ModalBottomTextWidget extends StatelessWidget {
                 fontSize: 18.sp,
               ),
             ),
+            const Spacer(),
+            subtext != null && imageUrl == null
+                ? Text(
+                    subtext!,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16.sp,
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            imageUrl != null
+                ? Image.asset(
+                    "assets/images/$imageUrl",
+                    fit: BoxFit.fill,
+                  )
+                : const SizedBox.shrink(),
             isVisible
-                ? Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 20.sp,
+                ? Padding(
+                    padding: EdgeInsets.only(left: 8.w),
+                    child: Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 20.sp,
+                    ),
                   )
                 : const SizedBox.shrink()
           ],

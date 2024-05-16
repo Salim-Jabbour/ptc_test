@@ -10,13 +10,14 @@ class CustomButton extends StatelessWidget {
     required this.height,
     required this.width,
     required this.radius,
+    this.isCounter,
     required this.child,
   });
   final Function method;
   final double height;
   final double width;
   final double radius;
-
+  final bool? isCounter;
   final Widget child;
 
   @override
@@ -29,10 +30,12 @@ class CustomButton extends StatelessWidget {
         height: height.h,
         width: width.w,
         decoration: BoxDecoration(
-          color: ColorManager.green,
-          // border: Border.all(
-          //     // color: ColorManager.green,
-          //     ),
+          color: isCounter == null ? ColorManager.green : Colors.white,
+          border: isCounter == null
+              ? null
+              : Border.all(
+                  color: const Color.fromRGBO(226, 226, 226, 1),
+                ),
           borderRadius: BorderRadius.all(Radius.circular(radius.r)),
         ),
         child: child,

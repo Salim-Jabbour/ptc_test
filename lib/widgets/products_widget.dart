@@ -10,8 +10,8 @@ class ProductsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 115.h,
-      width: 173.w,
+      // height: 115.h,
+      // width: 173.w,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.grey,
@@ -22,7 +22,7 @@ class ProductsWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 15.h),
+            padding: EdgeInsets.symmetric(vertical: 8.h),
             child: SizedBox(
               height: 93.h,
               child: Center(
@@ -37,16 +37,22 @@ class ProductsWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: SizedBox(
               width: 123.w,
-              height: 20.h,
-              child: Text(
-                product.name,
-                style: TextStyle(fontSize: 16.sp),
-                textAlign: TextAlign.start,
+              height: 45.h,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.name,
+                    style: TextStyle(fontSize: 16.sp),
+                    textAlign: TextAlign.start,
+                  ),
+                ],
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: SizedBox(
               width: 79.w,
               height: 40.h,

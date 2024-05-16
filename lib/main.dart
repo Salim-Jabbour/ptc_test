@@ -110,7 +110,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         child: Text(
                           "Get Started",
                           style: TextStyle(
-                            fontWeight: FontWeight.w300,
                             color: Colors.white,
                             fontSize: 18.sp,
                           ),

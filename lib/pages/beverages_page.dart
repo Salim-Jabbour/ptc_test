@@ -17,7 +17,6 @@ class _BeveragesPageState extends State<BeveragesPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      top: true,
       child: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -27,10 +26,10 @@ class _BeveragesPageState extends State<BeveragesPage> {
           centerTitle: true,
           actions: [
             Padding(
-              padding: EdgeInsets.all(10.w),
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: CustomButton(
-                height: 40.h,
-                width: 40.h,
+                height: 35.h,
+                width: 35.h,
                 radius: 14.r,
                 method: () {
                   showBottomSheet(context);
@@ -38,7 +37,7 @@ class _BeveragesPageState extends State<BeveragesPage> {
                 child: Icon(
                   Icons.add_rounded,
                   color: Colors.white,
-                  size: 30.h,
+                  size: 20.h,
                 ),
               ),
             )
@@ -56,7 +55,7 @@ class _BeveragesPageState extends State<BeveragesPage> {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisSpacing: 15.w,
                     mainAxisSpacing: 15.h,
-                    childAspectRatio: 1.43 / 2,
+                    mainAxisExtent: 249.h,
                     crossAxisCount: 2,
                   ),
                   itemCount: ConstManager.products.length,
@@ -77,9 +76,6 @@ class _BeveragesPageState extends State<BeveragesPage> {
       builder: (context) => Container(
         decoration: BoxDecoration(
           color: const Color.fromRGBO(242, 243, 242, 1),
-          // border: Border.all(
-          //     // color: ColorManager.green,
-          //     ),
           borderRadius: BorderRadius.all(Radius.circular(30.r)),
         ),
         child: Padding(
@@ -95,11 +91,16 @@ class _BeveragesPageState extends State<BeveragesPage> {
                         "Add",
                         style: TextStyle(fontSize: 24.sp),
                       ),
-                      Icon(
-                        Icons.close_rounded,
-                        color: Colors.black,
-                        size: 25.sp,
-                      )
+                      IconButton(
+                        icon: Icon(
+                          Icons.close_rounded,
+                          color: Colors.black,
+                          size: 25.sp,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -128,7 +129,7 @@ class _BeveragesPageState extends State<BeveragesPage> {
                       const ModalBottomTextWidget(
                           text: "Image", isVisible: true),
                       SizedBox(
-                        height: 20.h,
+                        height: 14.h,
                       ),
                       Center(
                         child: CustomButton(

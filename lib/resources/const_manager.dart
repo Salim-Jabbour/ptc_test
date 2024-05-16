@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../model/beverages_model.dart';
+import '../model/cart_item_model.dart';
+import '../pages/cart_page.dart';
 import '../pages/empty_page.dart';
 import '../pages/explore_page.dart';
 import 'color_manager.dart';
@@ -10,7 +12,7 @@ class ConstManager {
   static final List<Widget> pageOptions = [
     const EmptyPage(text: "Shop"),
     const ExplorePage(),
-    const EmptyPage(text: "Home"),
+    const CartPage(),
     const EmptyPage(text: "Favourite"),
     const EmptyPage(text: "Profile"),
   ];
@@ -115,6 +117,37 @@ class ConstManager {
       name: "Pepsi Can",
       volume: "330ml",
       price: "\$4.99",
+    ),
+  ];
+
+  static final List<CartItemModel> cartItems = [
+    // 1
+    CartItemModel(
+      imageUrl: "/pepper.png",
+      name: "Bell Pepper Red",
+      quantity: "1kg, Price",
+      price: "\$4.99",
+    ),
+    // 2
+    CartItemModel(
+      imageUrl: "/egg.png",
+      name: "Egg Chicken Red",
+      quantity: "4pcs, Price",
+      price: "\$1.99",
+    ),
+    // 3
+    CartItemModel(
+      imageUrl: "/banana.png",
+      name: "Organic Bananas",
+      quantity: "12kg, Price",
+      price: "\$3.00",
+    ),
+    // 4
+    CartItemModel(
+      imageUrl: "/ginger.png",
+      name: "Ginger",
+      quantity: "250gm, Price",
+      price: "\$2.99",
     ),
   ];
 }

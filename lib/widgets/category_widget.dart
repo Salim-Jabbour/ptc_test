@@ -11,15 +11,10 @@ class CategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BeveragesPage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const BeveragesPage()));
       },
       child: Container(
-        height: 190.h,
-        width: 175.w,
         decoration: BoxDecoration(
           color: categoryModel.backgroundColor,
           border: Border.all(

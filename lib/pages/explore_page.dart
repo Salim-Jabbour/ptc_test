@@ -16,6 +16,7 @@ class _ExplorePageState extends State<ExplorePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white ,
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text(
@@ -23,6 +24,10 @@ class _ExplorePageState extends State<ExplorePage> {
             style: TextStyle(fontSize: 20.sp),
           ),
           centerTitle: true,
+          forceMaterialTransparency: true,
+          backgroundColor: Colors.transparent,
+          // foregroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
         ),
         body: Column(
           children: [
@@ -36,6 +41,7 @@ class _ExplorePageState extends State<ExplorePage> {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisSpacing: 15.w,
                     mainAxisSpacing: 15.h,
+                    mainAxisExtent: 190.h,
                     crossAxisCount: 2,
                   ),
                   itemCount: ConstManager.category.length,
